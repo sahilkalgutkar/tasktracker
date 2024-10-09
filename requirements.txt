@@ -1,0 +1,2 @@
+setuptools>=75.0.0
+argparse==1.4.0

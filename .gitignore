@@ -1,0 +1,23 @@
+# Python-related files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment files
+.venv/
+.env
+*.env
+
+# macOS-specific files
+.DS_Store
+
+# VSCode-specific files and folders
+.vscode/
+.history/
+
+# Ignore your virtual environment folder
+virconv/
+
+# Logs and other system-generated files
+*.log
