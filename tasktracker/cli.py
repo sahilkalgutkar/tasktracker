@@ -8,7 +8,7 @@ def main():
     parser.add_argument("--description", help="Description of the task")
 
     args = parser.parse_args()
-    tracker = TaskTracker()
+    tracker = TaskTracker()  # Create an instance of TaskTracker that loads tasks from JSON
 
     if args.action == "add":
         if args.title and args.description:
