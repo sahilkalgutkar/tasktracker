@@ -1,2 +1,0 @@
-[console_scripts]
-tasktracker = tasktracker.cli:main
