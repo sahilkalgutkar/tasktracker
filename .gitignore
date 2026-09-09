@@ -21,3 +21,15 @@ virconv/
 
 # Logs and other system-generated files
 *.log
+
+# Runtime task store (created on first run, not source)
+tasks.json
+
+# Build and coverage artifacts
+*.egg-info/
+build/
+dist/
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/

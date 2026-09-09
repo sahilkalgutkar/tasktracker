@@ -52,9 +52,16 @@ class Task:
 
 
 class TaskTracker:
+    # Default store, overridable per-instance or via TASKTRACKER_STORE so tests
+    # (and anyone running several task lists) don't share one file.
     STORAGE_FILE = 'tasks.json'
 
-    def __init__(self):
+    def __init__(self, storage_file=None):
+        self.storage_file = (
+            storage_file
+            or os.environ.get('TASKTRACKER_STORE')
+            or self.STORAGE_FILE
+        )
         self.tasks = self.load_tasks()
 
     def add_task(self, title, description):
@@ -94,12 +101,12 @@ class TaskTracker:
         return self.tasks
 
     def save_tasks(self):
-        with open(self.STORAGE_FILE, 'w') as file:
+        with open(self.storage_file, 'w') as file:
             json.dump([task.to_dict() for task in self.tasks], file)
 
     def load_tasks(self):
-        if os.path.exists(self.STORAGE_FILE):
-            with open(self.STORAGE_FILE, 'r') as file:
+        if os.path.exists(self.storage_file):
+            with open(self.storage_file, 'r') as file:
                 tasks_data = json.load(file)
                 return [Task.from_dict(task_data) for task_data in tasks_data]
         return []

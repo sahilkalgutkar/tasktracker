@@ -1,3 +1,5 @@
+# argparse is in the standard library on every supported Python; the PyPI
+# package of that name is an obsolete 3.1-era backport, so it is not listed here.
 setuptools>=75.0.0
-argparse==1.4.0
 pytest>=6.0
+pytest-cov>=4.0
