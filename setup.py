@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name="tasktracker",
-    version="0.1",
+    version="0.1.0",
     description="A simple task tracking CLI application",
     author="Sahil Kalgutkar",
-    author_email="your.email@example.com",
+    author_email="sahilkal717@gmail.com",
     license="MIT",
     packages=find_packages(),
     install_requires=[],

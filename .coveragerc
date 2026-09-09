@@ -1,0 +1,8 @@
+[run]
+source = tasktracker
+
+[report]
+exclude_lines =
+    pragma: no cover
+    # The console-script guard is entrypoint wiring with no logic to test.
+    if __name__ == .__main__.:
